@@ -5,13 +5,13 @@
     <div class="profile-section-all-users">
         <div class="profile-details-sec-o">
             <h1 class="profile-detail-header">User profile details</h1>
-            <p class="profile-desc">View your profile details and update then <span>(Optional)</span></p>
+            <p class="profile-desc">View your profile details and update then <span><b><i>(Optional)</i></b></span></p>
 
             <form id="send-verification" method="post" action="{{ route('verification.send') }}">
                 @csrf
             </form>
 
-            <form action="{{ route('admin.profile.update') }}" method="post">
+            <form action="{{ route('adminprofile.update') }}" method="post">
                 @csrf
                 @method('patch')
 
@@ -33,7 +33,7 @@
             <h1 class="profile-detail-header">Update password</h1>
             <p class="profile-desc">View your password and update</p>
 
-            <form action="{{ route('admin.password.update') }}" method="post">
+            <form action="{{ route('adminprofile.updatePassword') }}" method="post">
                 @csrf
                 @method('put')
 
@@ -59,7 +59,7 @@
             <h1 class="profile-detail-header">Delete profile</h1>
             <p class="profile-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit deserunt voluptates asperiores perspiciatis nihil aspernatur animi omnis ut quia placeat quidem molestias culpa mollitia velit eveniet, incidunt ducimus sed ab!</p>
             
-            <form action="{{ route('admin.profile.delete') }}" method="post">
+            <form action="{{ route('adminprofile.delete') }}" method="post">
                 @csrf
                 @method('delete')
 
