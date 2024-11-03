@@ -38,7 +38,7 @@ class AdminprofileController extends Controller
         $user->save();
 
         // Redirect to admin dashboard or desired route
-        return redirect()->route('admin.dashboard')->with('status', 'Profile updated successfully!');
+        return redirect()->route('adminprofile')->with('status', 'Profile updated successfully!');
     }
 
     /**
@@ -63,7 +63,7 @@ class AdminprofileController extends Controller
         $user->password = Hash::make($request->input('new-password'));
         $user->save();
 
-        return redirect()->route('admin.dashboard')->with('status', 'Password updated successfully!');
+        return redirect()->route('adminprofile.show')->with('status', 'Password updated successfully!');
     }
 
     /**
