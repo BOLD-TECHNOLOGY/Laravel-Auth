@@ -27,10 +27,10 @@ Route::middleware('auth')->group(function () {
 
 // admin profile routes 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/adminprofile', [AdminprofileController::class, 'show'])->name('admin.profile.show');
-    Route::patch('/adminprofile', [AdminprofileController::class, 'update'])->name('admin.profile.update');
-    Route::put('/adminprofile', [AdminprofileController::class, 'updatePassword'])->name('admin.password.update');
-    Route::delete('/adminprofile', [AdminprofileController::class, 'destroy'])->name('admin.profile.delete');
+    Route::get('/adminprofile', [AdminprofileController::class, 'show'])->name('adminprofile.show');
+    Route::patch('/adminprofile', [AdminprofileController::class, 'update'])->name('adminprofile.update');
+    Route::put('/adminprofile', [AdminprofileController::class, 'updatePassword'])->name('adminprofile.updatePassword');
+    Route::delete('/adminprofile', [AdminprofileController::class, 'destroy'])->name('adminprofile.delete');
 });
 
 Route::get('admin.dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
@@ -46,8 +46,8 @@ Route::get('/users', [UserListController::class, 'userlist'])->middleware(['auth
 
 // admin controll list of users 
 Route::get('/users', [UserListController::class, 'index'])->middleware(['auth', 'admin'])->name('users');
-Route::post('/users/change-role', [UserListController::class, 'changeRole'])->middleware(['auth', 'admin']);
-Route::post('/users/delete-user', [UserListController::class, 'deleteUser'])->middleware(['auth', 'admin']);
+Route::post('/admin/users/changeRole', [UserListController::class, 'changeRole'])->middleware(['auth', 'admin'])->name('users.changeRole');
+Route::post('/admin/users/deleteUser', [UserListController::class, 'deleteUser'])->middleware(['auth', 'admin'])->name('users.deleteUser');
 
 
 
