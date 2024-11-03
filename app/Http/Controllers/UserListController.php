@@ -28,7 +28,7 @@ class UserListController extends Controller
         $user->role = $request->input('role');
         $user->save();
 
-        return redirect()->route('admin.users')->with('success', 'User role updated successfully.');
+        return redirect()->route('users')->with('success', 'User role updated successfully.');
     }
 
 
@@ -39,7 +39,7 @@ class UserListController extends Controller
          $user = User::where('id', $request->input('user_id'))->firstOrFail();
          $user->delete();
  
-         return redirect()->route('admin.users')->with('success', 'User deleted successfully.');
+         return redirect()->route('users')->with('success', 'User deleted successfully.');
      }
 
 
