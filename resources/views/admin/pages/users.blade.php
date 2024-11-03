@@ -31,7 +31,7 @@
                         <td class="action-btn-table" id="special-user-btn">
 
                             <div class="action-section-form">
-                                <form action="{{ route('admin.users.change-role') }}" method="post" class="form-action--">
+                                <form action="{{ route('users.changeRole') }}" method="post" class="form-action--">
                                     @csrf
     
                                     <input type="hidden" name="user_id" value="{{ $user->id }}">
@@ -46,7 +46,7 @@
                                     <button type="submit">Change</button>
                                 </form>
     
-                                <form action="/admin/users/delete-user" method="post">
+                                <form action="{{ route('users.deleteUser') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="user_id" value="{{ $user->id }}">
     
